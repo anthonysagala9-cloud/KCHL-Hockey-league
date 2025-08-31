@@ -1,0 +1,9 @@
+
+# Render.yaml for Render.com automatic deploy
+services:
+  - type: web
+    name: nhl26-api
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT

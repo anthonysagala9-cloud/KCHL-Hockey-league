@@ -1,0 +1,15 @@
+
+version: "3.8"
+services:
+  api:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      - ADMIN_API_KEY=changeme
+    volumes:
+      - ./backend/uploads:/app/uploads
+  web:
+    build: ./frontend
+    ports:
+      - "3000:80"
